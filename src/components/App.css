@@ -1,0 +1,138 @@
+/* tags */
+body{
+  background-color: #052b57;
+}
+
+h1, h2, h3, h4, label, .navbar-brand, .nav-link{
+  color: #FFFFFF!important;
+}
+
+i{
+  color: #FFFFFF;
+  font-size: 30px;
+  cursor: pointer;
+}
+ul{
+  margin-right: 35px;
+}
+
+
+/* mixed tags and classes */
+span, .navbar-toggler-icon{
+  color: #FFFFFF!important;
+  border-color: #FFFFFF;
+}
+
+
+/* classes */
+.alert{
+  height:50px;
+}
+
+.bg-light{
+  background-color: #052b57!important;
+}
+
+.btn, .btn-outline-success, .navbar-toggler{
+  color: #FFFFFF!important;
+  border-color: #d6645a;
+  background-color: #d6645a;
+}
+.card-info{
+  color: #FFFFFF;
+}
+
+.container-fluid{
+  vertical-align: center;
+  padding: auto;
+  text-align: center;
+}
+.detail-card{
+  background-color: #d6645a;
+  color: #052b57;
+  align-content: center;
+  margin:auto;
+}
+.detail-image{
+  margin:auto;
+  width:75%;
+  /* border-radius: 2px; */
+  /* border-width: 2px; */
+  /* border-color: #FFFFFF; */
+  border: 5px solid #052b57;
+}
+.detail-card{
+  width:420px;
+}
+.contact-list{
+  margin:auto;
+}
+.form-control{
+  margin: auto;
+}
+
+
+.your-contact-card{
+  background-color: #d6645a;
+  margin: auto!important;
+}
+
+.err{
+  font-size: 10px;
+  color: red!important;
+}
+
+.row{
+  padding: 5px!important;
+}
+
+
+@media (max-width: 767px) {
+  .your-image-class {
+    width: 50%;
+    height: 50px;
+  }
+  .your-contact-card{
+    height: 70px;
+  }
+  .search{
+    margin:auto;
+    width: 80%;
+  }
+  
+  i{
+    font-size: 15px;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+
+  .your-image-class {
+    width: 100px;
+    height: 100px;
+  }
+  .your-contact-card{
+    height: 120px;
+  }
+  
+  .col-7{
+    margin-top: 2px;
+  }
+  i{
+    font-size: 30px;
+  }
+  .search{
+    margin:auto;
+    width: 45%;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
