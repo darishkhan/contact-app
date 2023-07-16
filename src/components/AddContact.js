@@ -3,7 +3,6 @@ import "./App.css";
 import contactContext from "../context/contacts/contactContext.js";
 import { useNavigate } from "react-router-dom";
 
-
 //This component will handle addition of new contacts
 const AddContact = (props) => {
   //using navigate so as to go back to home
@@ -21,24 +20,27 @@ const AddContact = (props) => {
   // if JWT token not present in local storage
   // i.e., user is not logged in
   // so redirect to login page
-  useEffect(()=>{
-    if(!localStorage.getItem('token'))
-    {
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
       goto("/login");
     }
   }, []);
 
-  //
+  //here the information is being passed to the addContact function
+  //present in the ContactState.
   const handleSubmit = (e) => {
     e.preventDefault();
     addContact(contact.name, contact.email, contact.phone, props);
     goto("/");
   };
 
+  //if something is typed in fields, update the current contact.
   const onChange = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
 
+
+  // this is the visual part of the component.
   return (
     <div className="container mt-5 align-items-center">
       <h3 className="mx-3">Add Contact</h3>
@@ -55,8 +57,8 @@ const AddContact = (props) => {
               onChange={onChange}
             />
             <span className="err">
-              {contact.name.length < 4
-                && "Name must have more than 3 characters"}
+              {contact.name.length < 4 &&
+                "Name must have more than 3 characters"}
             </span>
           </div>
           <div className="form-group my-3 mx-3">
@@ -88,6 +90,8 @@ const AddContact = (props) => {
             </span>
           </div>
         </div>
+        {/* if the following conditions are not satisfied, */}
+        {/* button won't be clickable */}
         <button
           disabled={
             contact.name.length < 4 ||

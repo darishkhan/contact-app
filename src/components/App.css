@@ -56,9 +56,6 @@ span, .navbar-toggler-icon{
 .detail-image{
   margin:auto;
   width:75%;
-  /* border-radius: 2px; */
-  /* border-width: 2px; */
-  /* border-color: #FFFFFF; */
   border: 5px solid #052b57;
 }
 .detail-card{
@@ -70,11 +67,10 @@ span, .navbar-toggler-icon{
 .form-control{
   margin: auto;
 }
-
-
 .your-contact-card{
   background-color: #d6645a;
-  margin: auto!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
 }
 
 .err{
@@ -99,7 +95,6 @@ span, .navbar-toggler-icon{
     margin:auto;
     width: 80%;
   }
-  
   i{
     font-size: 15px;
   }
@@ -115,7 +110,6 @@ span, .navbar-toggler-icon{
   .your-contact-card{
     height: 120px;
   }
-  
   .col-7{
     margin-top: 2px;
   }

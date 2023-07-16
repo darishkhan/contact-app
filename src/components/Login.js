@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const host = "http://localhost:5000";
@@ -20,21 +20,20 @@ const Login = (props) => {
         body: JSON.stringify({ email: info.email, password: info.password }),
       });
       const json = await response.json();
-      
-      if(json.success){
-          localStorage.setItem('token', json.authtoken);
-          props.showAlert("success", "Login successful!")
-          history("/");
+
+      if (json.success) {
+        localStorage.setItem("token", json.authtoken);
+        props.showAlert("success", "Login successful!");
+        history("/");
+      } else {
+        props.showAlert("danger", "Invalid credentials.");
       }
-      else
-      {
-          props.showAlert("danger", "Invalid credentials.");
-      }
-      
     } catch (error) {
-      props.showAlert("danger", "Sever under maintenance. Please try again later.")
+      props.showAlert(
+        "danger",
+        "Sever under maintenance. Please try again later."
+      );
     }
-    
   };
 
   const onChange = (e) => {
@@ -75,12 +74,13 @@ const Login = (props) => {
           Submit
         </button>
       </form>
-      
+
       <div className="my-3" style={{ height: "50px" }}>
-        <span>If you don't have an account, then <Link to="/signup">Sign up</Link></span>
+        <span>
+          If you don't have an account, then <Link to="/signup">Sign up</Link>
+        </span>
       </div>
     </div>
-    
   );
 };
 
