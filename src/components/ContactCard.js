@@ -2,15 +2,28 @@ import React, { useContext } from "react";
 import user from "../images/profile.jpg";
 import contactContext from "../context/contacts/contactContext.js";
 import { Link } from "react-router-dom";
+// import Editcontactjson from "./Editcontact.js";
 
-
+//this is the contact card component
 const ContactCard = (props) => {
+  //we are using context to easily access all the functions
+  //initialised in contactjsonState
   const context = useContext(contactContext);
   const { deleteContact } = context;
 
-  const { _id, name, email } = props.contact;
+  //destructuring to obtain id, name and email
+  const { _id, name, email, phone } = props.contact;
+  const editContact = props.editContact;
+  const removeContact = props.removeContact;
+
+
+
   return (
     <>
+
+
+
+
       <div className="card my-1 mx-3 col-xl-6 your-contact-card">
         <div className="row p-3">
           <div className="col-3">
@@ -21,20 +34,25 @@ const ContactCard = (props) => {
             />
           </div>
           <div className="col-7">
-            <Link className="card-info" to={"/"+_id}>
-            <h5>{name}</h5>
-            <p>{email}</p>
+            <Link className="card-info" to={"/" + _id}>
+              <h5>{name}</h5>
+              <p>{email}</p>
             </Link>
           </div>
           <div className=" col-1 align-items-center">
             <div className="col-2">
               <i
                 className="fa-solid fa-trash"
-                onClick={() => {
-                  deleteContact(props.contact._id, props);
-                }}
+                data-toggle="modal"
+                data-target="#deleteModalCenter"
+                onClick={()=>{removeContact(_id)}}
               ></i>
-              <i className="fa-regular fa-pen-to-square inline"></i>
+              <i
+                className="fa-regular fa-pen-to-square inline"
+                data-toggle="modal"
+                data-target="#editModalCenter"
+                onClick={()=>{editContact(_id, name, email, phone)}}
+              ></i>
             </div>
           </div>
         </div>

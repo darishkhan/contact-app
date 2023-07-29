@@ -85,6 +85,48 @@ const ContactState = (props) => {
     }
   };
 
+
+  //edit contact
+  const updateContact = async (contact, props) =>{
+    const {_id, name, email, phone} = contact;
+    try {
+      const response = await fetch(`${host}/api/contacts/editContact`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({_id, name, email, phone }),
+      });
+      const json = await response.text();
+      console.log(json);
+      if(response.status===404)
+      {
+        return props.showAlert("danger", json);
+      }
+      if(response.status===401){
+        return props.showAlert("danger", json);
+      }
+      if(response.status===500){
+        return props.showAlert("danger", json);
+      }
+      const newContact = contacts.filter((contact) => {
+        if(contact._id === _id)
+        {
+          contact.name = name;
+          contact.email=email;
+          contact.phone=phone;
+        }
+        return true;
+      });
+      setContacts(newContact);
+      props.showAlert("success", "contact deleted successfully.")
+      
+    } catch (error) {
+      props.showAlert("danger", "server under maintenance, try again later.")
+    }
+  }
+
   //delete a contact
   const deleteContact = async (id, props) => {
     try {
@@ -122,7 +164,7 @@ const ContactState = (props) => {
 
   return (
     <ContactContext.Provider
-      value={{ contacts, setContacts, addContact, deleteContact, getContacts, getContact }}
+      value={{ contacts, setContacts, addContact, deleteContact, getContacts, getContact, updateContact }}
     >
       {props.children}
     </ContactContext.Provider>
