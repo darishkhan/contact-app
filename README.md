@@ -1,5 +1,6 @@
 ### Welcome 
 This is a contact management web app, which will ease your life in managing all your contacts hassle-free.
+
 <img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/cd237300-7cd6-4d40-a070-6c2e71916e79">
 <img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/e17ff619-6275-4d6f-8969-978254e841d4">
 <img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/e1cd6b7a-2c42-49bb-9424-772503cd71c0">
