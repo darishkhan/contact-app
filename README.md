@@ -8,3 +8,4 @@ This is a contact management web app, which will ease your life in managing all 
 <img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/e50ed861-8961-445d-9eb6-25fabc4cc2f6">
 <img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/f9fceabb-64a2-46b3-877d-fec34d339c74">
 <img width="377" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/c4da19f3-62e1-4429-ae9a-782147f167e5">
+<img width="960" alt="image" src="https://github.com/darishkhan/contact-app/assets/93848997/92844939-e9f2-411a-b390-4d0285cf8223">
